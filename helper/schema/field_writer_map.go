@@ -61,7 +61,7 @@ func (w *MapFieldWriter) WriteField(addr []string, value interface{}) error {
 
 	schemaList := addrToSchema(addr, w.Schema)
 	if len(schemaList) == 0 {
-		return fmt.Errorf("Invalid address to set: %#v", addr)
+		return fmt.Errorf("Invalid address to WriteField(): %#v", addr)
 	}
 
 	// If we're setting anything other than a list root or set root,
@@ -92,7 +92,7 @@ func (w *MapFieldWriter) WriteField(addr []string, value interface{}) error {
 func (w *MapFieldWriter) set(addr []string, value interface{}) error {
 	schemaList := addrToSchema(addr, w.Schema)
 	if len(schemaList) == 0 {
-		return fmt.Errorf("Invalid address to set: %#v", addr)
+		return fmt.Errorf("Invalid address to set(): %#v", addr)
 	}
 
 	schema := schemaList[len(schemaList)-1]
